@@ -70,7 +70,7 @@ python manage.py test
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache-2.0 license - see the LICENSE file for details.
 
 #### Feel free to customize this template further based on your specific project requirements and preferences.
 
