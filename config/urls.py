@@ -11,9 +11,9 @@ from rest_framework_simplejwt.views import (
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Your API",
+        title="Snippets API",
         default_version="v1",
-        description="RESTful API for your project",
+        description="Test description",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="hossain.chisty11@gmail.com"),
         license=openapi.License(name="Apache-2.0 license"),
