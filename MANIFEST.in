@@ -1,0 +1,7 @@
+include AUTHORS
+graft docs
+graft extras
+graft scripts
+graft tests
+global-exclude __pycache__
+global-exclude *.py[co]
