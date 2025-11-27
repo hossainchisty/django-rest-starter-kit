@@ -1,4 +1,13 @@
-# 1.21.0 (2024-03-20)
+# [1.22.0](https://github.com/hossainchisty/django-rest-starter-kit/compare/v1.21.0...v1.22.0) (2025-11-27)
+
+
+### Features
+
+* scaffold initial Django REST project structure with core and user applications ([a985068](https://github.com/hossainchisty/django-rest-starter-kit/commit/a985068945a50cecfe0ea20035bcd9aa44b4188f))
+
+
+
+# [1.21.0](https://github.com/hossainchisty/django-rest-starter-kit/compare/b23e8881855b2b0b29742f4eaef7495e56026ce6...v1.21.0) (2024-03-20)
 
 
 ### Features
