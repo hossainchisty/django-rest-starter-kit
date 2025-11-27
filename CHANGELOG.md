@@ -1,3 +1,12 @@
+# [1.23.0](https://github.com/hossainchisty/django-rest-starter-kit/compare/v1.22.0...v1.23.0) (2025-11-27)
+
+
+### Features
+
+* Establish comprehensive development environment with Makefile, pre-commit, Docker, documentation, and initial tests, and update project version. ([abe0529](https://github.com/hossainchisty/django-rest-starter-kit/commit/abe052990bf3952230314bba918b53e34661d1af))
+
+
+
 # [1.22.0](https://github.com/hossainchisty/django-rest-starter-kit/compare/v1.21.0...v1.22.0) (2025-11-27)
 
 
