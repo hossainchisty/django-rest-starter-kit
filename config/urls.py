@@ -3,18 +3,15 @@ URL Configuration
 
 Main URL router for the Django REST Framework starter kit.
 """
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from rest_framework import permissions
-from drf_yasg.views import get_schema_view
+from django.contrib import admin
+from django.urls import include, path
 from drf_yasg import openapi
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView,
-)
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+from rest_framework_simplejwt.views import (TokenObtainPairView,
+                                            TokenRefreshView, TokenVerifyView)
 
 # Swagger/OpenAPI Schema
 schema_view = get_schema_view(
@@ -22,16 +19,7 @@ schema_view = get_schema_view(
         title="Django REST Starter Kit API",
         default_version="v1",
         description="""
-        A professional Django REST Framework starter kit with JWT authentication,
-        user management, and comprehensive API documentation.
-        
-        ## Features
-        - JWT Authentication (access & refresh tokens)
-        - User registration and profile management
-        - Password change functionality
-        - Comprehensive API documentation
-        - Rate limiting and throttling
-        - Filtering, searching, and pagination
+        Django REST Framework starter kit build by developers for developers.
         """,
         terms_of_service="https://www.example.com/terms/",
         contact=openapi.Contact(email="contact@example.com"),
