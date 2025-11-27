@@ -1,3 +1,14 @@
+# [1.24.0](https://github.com/hossainchisty/django-rest-starter-kit/compare/v1.23.0...v1.24.0) (2025-11-27)
+
+
+### Features
+
+* Add user authentication and profile management API views along with login API tests. ([350c113](https://github.com/hossainchisty/django-rest-starter-kit/commit/350c1139b418b0cd5dc736fff90073500e8099e5))
+* Implement user authentication and management APIs including registration, login, profile, and password change, along with login tests. ([300e322](https://github.com/hossainchisty/django-rest-starter-kit/commit/300e322f691de39828bbaa693fe20231eece261d))
+* Implement user authentication and profile management APIs with JWT and add associated tests. ([f345b57](https://github.com/hossainchisty/django-rest-starter-kit/commit/f345b57aa29543ac2c1d3ec7b555de737e671a6b))
+
+
+
 # [1.23.0](https://github.com/hossainchisty/django-rest-starter-kit/compare/v1.22.0...v1.23.0) (2025-11-27)
 
 
