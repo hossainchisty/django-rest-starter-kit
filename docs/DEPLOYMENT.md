@@ -14,6 +14,7 @@ This guide covers the steps to deploy the Django REST Starter Kit to a productio
 ## 1. Server Setup
 
 Update system packages:
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3-pip python3-venv python3-dev libpq-dev postgresql postgresql-contrib nginx curl git -y
@@ -22,6 +23,7 @@ sudo apt install python3-pip python3-venv python3-dev libpq-dev postgresql postg
 ## 2. Database Setup
 
 Create a PostgreSQL database and user:
+
 ```bash
 sudo -u postgres psql
 
@@ -37,14 +39,16 @@ GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
 ## 3. Application Setup
 
 Clone the repository:
+
 ```bash
 cd /var/www
-sudo git clone https://github.com/yourusername/django-rest-starter-kit.git
+sudo git clone https://github.com/hossainchisty/django-rest-starter-kit.git
 sudo chown -R $USER:$USER django-rest-starter-kit
 cd django-rest-starter-kit
 ```
 
 Create virtual environment and install dependencies:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -54,12 +58,14 @@ pip install -r requirements/production.txt
 ## 4. Environment Configuration
 
 Create `.env` file:
+
 ```bash
 cp .env.example .env
 nano .env
 ```
 
 Update the following variables:
+
 ```ini
 DEBUG=False
 SECRET_KEY=your-super-secret-key-generated-python
@@ -71,11 +77,13 @@ DJANGO_SETTINGS_MODULE=config.settings.production
 ## 5. Gunicorn Setup
 
 Create a systemd service file for Gunicorn:
+
 ```bash
 sudo nano /etc/systemd/system/gunicorn.service
 ```
 
 Content:
+
 ```ini
 [Unit]
 Description=gunicorn daemon
@@ -96,6 +104,7 @@ WantedBy=multi-user.target
 ```
 
 Start and enable Gunicorn:
+
 ```bash
 sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
@@ -104,18 +113,20 @@ sudo systemctl enable gunicorn
 ## 6. Nginx Setup
 
 Create Nginx server block:
+
 ```bash
 sudo nano /etc/nginx/sites-available/myproject
 ```
 
 Content:
+
 ```nginx
 server {
     listen 80;
     server_name yourdomain.com www.yourdomain.com;
 
     location = /favicon.ico { access_log off; log_not_found off; }
-    
+
     location /static/ {
         root /var/www/django-rest-starter-kit;
     }
@@ -132,6 +143,7 @@ server {
 ```
 
 Enable the site:
+
 ```bash
 sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
 sudo nginx -t
@@ -141,11 +153,13 @@ sudo systemctl restart nginx
 ## 7. SSL Certificate (Let's Encrypt)
 
 Install Certbot:
+
 ```bash
 sudo apt install certbot python3-certbot-nginx
 ```
 
 Obtain certificate:
+
 ```bash
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ```
@@ -153,6 +167,7 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ## 8. Final Steps
 
 Run migrations and collect static files:
+
 ```bash
 source venv/bin/activate
 python manage.py migrate
