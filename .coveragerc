@@ -1,0 +1,16 @@
+[run]
+omit = 
+    */migrations/*
+    */tests/*
+    */venv/*
+    manage.py
+    config/*
+    setup.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __str__
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:

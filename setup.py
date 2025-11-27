@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-rest-starter-kit",
-    version="1.21.1",
+    version="1.21.2",
     packages=find_packages(),
     license="MIT",
     description="Starter kit for Django Rest Framework projects",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Hossain Chisty",
     author_email="hossain.chisty11@gmail.com",
