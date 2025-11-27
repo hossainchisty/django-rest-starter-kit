@@ -8,7 +8,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class TimeStampedModel(models.Model):
+class TimeStamp(models.Model):
     """
     Abstract base model that provides self-updating
     'created_at' and 'updated_at' fields.
@@ -21,27 +21,3 @@ class TimeStampedModel(models.Model):
         abstract = True
         ordering = ["-created_at"]
 
-
-class UUIDModel(models.Model):
-    """
-    Abstract base model that uses UUID as primary key.
-    """
-
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False,
-    )
-
-    class Meta:
-        abstract = True
-
-
-class TimeStampedUUIDModel(TimeStampedModel, UUIDModel):
-    """
-    Abstract base model combining timestamp and UUID functionality.
-    """
-
-    class Meta:
-        abstract = True
-        ordering = ["-created_at"]
