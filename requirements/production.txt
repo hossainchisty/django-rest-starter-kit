@@ -1,0 +1,25 @@
+# Production dependencies
+-r base.txt
+
+# Production server
+gunicorn==21.2.0
+
+# Database
+psycopg2-binary==2.9.9
+
+# Caching
+redis==5.0.3
+django-redis==5.4.0
+
+# Security
+django-ratelimit==4.1.0
+
+# Monitoring and logging
+sentry-sdk==1.43.0
+
+# Cloud storage (optional)
+# boto3==1.34.69  # AWS S3
+# django-storages==1.14.2
+
+# Password hashing
+argon2-cffi==23.1.0
