@@ -11,14 +11,36 @@ from rest_framework.views import APIView
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
+from rest_framework_simplejwt.views import TokenObtainPairView
+
 from .serializers import (
     UserSerializer,
     UserRegistrationSerializer,
     ChangePasswordSerializer,
     UserUpdateSerializer,
+    CustomTokenObtainPairSerializer,
 )
 
 User = get_user_model()
+
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    """
+    API endpoint for user login.
+    
+    Returns JWT tokens (access and refresh) along with user details.
+    """
+    serializer_class = CustomTokenObtainPairSerializer
+
+    @swagger_auto_schema(
+        operation_description="Login user and get tokens with user details",
+        responses={
+            200: openapi.Response("Login successful", CustomTokenObtainPairSerializer),
+            401: "Unauthorized - Invalid credentials",
+        },
+    )
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
 
 
 class UserRegistrationView(generics.CreateAPIView):
